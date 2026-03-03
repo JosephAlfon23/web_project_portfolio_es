@@ -6,228 +6,244 @@
     <title>Joseph Alfonso Bermudez | Portfolio</title>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
+
   <body>
+    <!-- ================= HEADER ================= -->
     <header class="header">
-      <h1 class="header__title">Joseph Alfonso Bermudez</h1>
-      <p class="header__skills">HTML, CSS, Figma, JavaScript</p>
+      <div class="container">
+        <h1 class="header__title">Joseph Alfonso</h1>
 
-      <p class="header__description">
-        Hello, my name is Joseph Alfonso Bermudez. I am a passionate trainee web
-        developer with a solid foundation in front-end development, specializing
-        in HTML, CSS, and JavaScript to build responsive, user-friendly, and
-        well-structured websites.
-      </p>
+        <p class="header__skills">
+          Frontend Developer (Trainee) | HTML | CSS | BEM | Git & GitHub |
+          Responsive Layout | Figma (learning)
+        </p>
 
-      <p class="header__description">
-        I am currently expanding my knowledge toward full-stack development
-        while continuing to strengthen my front-end skills.
-      </p>
+        <p class="header__description">
+          Junior Web Developer with hands-on experience creating clean,
+          responsive interfaces using HTML, CSS, JavaScript, and React.
+          Motivated to keep learning and grow as a developer.
+        </p>
 
-      <img
-        src="images/fotodeperfil.jpg"
-        alt="Profile picture of Joseph Alfonso Bermudez"
-        class="header__image"
-      />
+        <img
+          src="images/fotodeperfil.jpg"
+          alt="Profile picture of Joseph Alfonso Bermudez"
+          class="header__image"
+        />
 
-      <nav class="header__nav">
-        <ul class="header__menu-items">
-          <li class="header__option-item">
-            <a
-              href="#projects"
-              class="header__part-link header__menu-link--active"
-              >Projects</a
-            >
-          </li>
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li class="header__menu-item">
+              <a
+                href="#projects"
+                class="header__menu-link header__menu-link--active"
+              >
+                Projects
+              </a>
+            </li>
 
-          <li class="header__option-item">
-            <a href="#letstalk" class="header__part-link">Let's talk</a>
-          </li>
+            <li class="header__menu-item">
+              <a href="#letstalk" class="header__menu-link"> Let's talk </a>
+            </li>
 
-          <li class="header__option-item">
-            <a
-              href="https://github.com/JosephAlfon23"
-              class="header__part-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub</a
-            >
-          </li>
-        </ul>
-      </nav>
+            <li class="header__menu-item">
+              <a
+                href="https://github.com/JosephAlfon23"
+                class="header__menu-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <main>
+    <!-- ================= MAIN ================= -->
+    <main class="main">
+      <!-- ===== SKILLS ===== -->
       <section class="skills">
-        <h2 class="main__subtitle">Skills and Tools</h2>
+        <div class="container">
+          <h2 class="main__subtitle">Skills and Tools</h2>
 
-        <div class="skills__container">
-          <img src="images/HTML.svg" alt="HTML logo" class="skills__icon" />
-          <img src="images/css.svg" alt="css logo" class="skills__icon" />
-          <img src="images/JS.svg" alt="JavaScript logo" class="skills__icon" />
-          <img src="images/GIT.svg" alt="Git logo" class="skills__icon" />
-          <img src="images/GITHUB.svg" alt="GitHub logo" class="skills__icon" />
+          <div class="skills__container">
+            <img src="images/HTML.svg" alt="HTML" class="skills__icon" />
+            <img src="images/css.svg" alt="CSS" class="skills__icon" />
+            <img src="images/JS.svg" alt="JavaScript" class="skills__icon" />
+            <img src="images/GIT.svg" alt="Git" class="skills__icon" />
+            <img src="images/GITHUB.svg" alt="GitHub" class="skills__icon" />
+            <img src="images/FIGMA.svg" alt="Figma" class="skills__icon" />
+          </div>
         </div>
       </section>
 
+      <!-- ===== PROJECTS ===== -->
       <section id="projects" class="features">
-        <h2 class="features__title">Featured Projects</h2>
+        <div class="container">
+          <h2 class="features__title">Featured Projects</h2>
 
-        <div class="features__container">
-          <article class="features__card">
-            <div class="features__card-image-container">
-              <img
-                src="images/Project.jpg"
-                alt="Coffee shop project preview"
-                class="features__card-image"
-              />
-              <div class="project__card-overlay"></div>
-
-              <div class="features__card-tech-icons">
+          <div class="features__container">
+            <!-- PROJECT 1 -->
+            <article class="features__card">
+              <div class="features__card-image-container">
                 <img
-                  src="images/HTML.svg"
-                  alt="HTML"
-                  class="features__card__tech-icons"
+                  src="images/Project.jpg"
+                  alt="Coffee shop project preview"
+                  class="features__card-image"
                 />
+
+                <div class="features__card-overlay"></div>
+
+                <div class="features__card-tech-icons">
+                  <img
+                    src="images/HTML.svg"
+                    class="features__card-tech-icon"
+                    alt="HTML"
+                  />
+                  <img
+                    src="images/CSS.svg"
+                    class="features__card-tech-icon"
+                    alt="CSS"
+                  />
+                </div>
+              </div>
+
+              <div class="features__card-content">
+                <h3 class="features__card-title">Coffee Website</h3>
+
+                <p class="features__card-description">
+                  Development of a responsive landing page for a coffee shop.
+                </p>
+
+                <div class="features__card-links">
+                  <a
+                    href="https://github.com/JosephAlfon23/web_project_coffeeshop_es"
+                    class="features__card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="images/Demo.svg"
+                      class="link-icon"
+                      alt="Live demo"
+                    />
+                    <span>Live Demo</span>
+                  </a>
+
+                  <a
+                    href="https://github.com/JosephAlfon23/web_project_coffeeshop_es"
+                    class="features__card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="images/Gitcat.svg"
+                      class="link-icon"
+                      alt="Repository"
+                    />
+                    <span>Repository</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 2 -->
+            <article class="features__card">
+              <div class="features__card-image-container">
                 <img
-                  src="images/CSS.svg"
-                  alt="CSS"
-                  class="features__card__tech-icons"
+                  src="images/IMAGECODE.jpg"
+                  alt="Code project"
+                  class="features__card-image"
                 />
-              </div>
-            </div>
 
-            <div class="features__card__content">
-              <h3 class="features__card__title">Coffee Website</h3>
+                <div class="features__card-overlay"></div>
 
-              <p class="features__card__description">
-                Development of a responsive landing page for a coffee shop based
-                on a design brief.
-              </p>
-
-              <div class="features__card__links">
-                <a
-                  href="https://github.com/JosephAlfon23/web_project_coffeeshop_es"
-                  class="project-card__link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <div class="features__card-tech-icons">
                   <img
-                    src="images/Demo.svg"
-                    alt="Live demo"
-                    class="link-icon"
+                    src="images/JS.svg"
+                    class="features__card-tech-icon"
+                    alt="JavaScript"
                   />
-                  <span>Live Demo</span>
-                </a>
-
-                <a
-                  href="https://github.com/JosephAlfon23/web_project_coffeeshop_es"
-                  class="project-card__link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
                   <img
-                    src="images/Gitcat.svg"
-                    alt="GitHub repository"
-                    class="link-icon"
+                    src="images/FIGMA.svg"
+                    class="features__card-tech-icon"
+                    alt="Figma"
                   />
-                  <span>Repository</span>
-                </a>
+                </div>
               </div>
-            </div>
-          </article>
 
-          <article class="features__card">
-            <div class="features__card-image-container">
-              <img
-                src="images/IMAGECODE.jpg"
-                alt="project preview"
-                class="features__card-image"
-              />
-              <div class="project__card-overlay"></div>
+              <div class="features__card-content">
+                <h3 class="features__card-title">Code Project</h3>
 
-              <div class="features__card-tech-icons">
-                <img
-                  src="images/JS.svg"
-                  alt="JavaScript"
-                  class="features__card__tech-icons"
-                />
-                <img
-                  src="images/FIGMA.svg"
-                  alt="Figma"
-                  class="features__card__tech-icons"
-                />
+                <p class="features__card-description">Project description.</p>
+
+                <div class="features__card-links">
+                  <a
+                    href="https://github.com/JosephAlfon23/web_project_portfolio_es.git"
+                    class="features__card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="images/Demo.svg"
+                      class="link-icon"
+                      alt="Live demo"
+                    />
+                    <span>Live Demo</span>
+                  </a>
+
+                  <a
+                    href="https://github.com/JosephAlfon23/web_project_portfolio_es.git"
+                    class="features__card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="images/Gitcat.svg"
+                      class="link-icon"
+                      alt="Repository"
+                    />
+                    <span>Repository</span>
+                  </a>
+                </div>
               </div>
-            </div>
-
-            <div class="features__card__content">
-              <h3 class="features__card__title">Code Project</h3>
-
-              <p class="features__card__description">project description</p>
-
-              <div class="features__card__links">
-                <a
-                  href="https://github.com/JosephAlfon23/web_project_portfolio_es.git"
-                  class="project-card__link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/Demo.svg"
-                    alt="Live demo"
-                    class="link-icon"
-                  />
-                  <span>Live Demo</span>
-                </a>
-
-                <a
-                  href="https://github.com/JosephAlfon23/web_project_portfolio_es.git"
-                  class="project-card__link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/Gitcat.svg"
-                    alt="GitHub repository"
-                    class="link-icon"
-                  />
-                  <span>Repository</span>
-                </a>
-              </div>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
       </section>
     </main>
 
+    <!-- ================= FOOTER ================= -->
     <footer class="footer">
-      <section class="footer_contact" id="letstalk">
-        <div class="footer__title">
-          <h3 class="footer__contact">Contact Me</h3>
-        </div>
+      <section class="footer__contact" id="letstalk">
+        <div class="container">
+          <h3 class="footer__contact-title">Contact Me</h3>
 
-        <p>© 2026 Joseph Alfonso Bermudez — Web Developer</p>
+          <p>© 2026 Joseph Alfonso Bermudez — Web Developer</p>
 
-        <div class="footer__icons">
-          <img
-            src="images/LinkedIn.svg"
-            alt="linkedin"
-            class="footer__socialmedia"
-          />
-          <img
-            src="images/facebook.svg"
-            alt="facebook"
-            class="footer__socialmedia"
-          />
-          <img
-            src="images/insta.svg"
-            alt="instagram"
-            class="footer__socialmedia"
-          />
-          <img
-            src="images/twiter.svg"
-            alt="twitter"
-            class="footer__socialmedia"
-          />
+          <div class="footer__icons">
+            <img
+              src="images/LinkedIn.svg"
+              class="footer__socialmedia"
+              alt="LinkedIn"
+            />
+            <img
+              src="images/facebook.svg"
+              class="footer__socialmedia"
+              alt="Facebook"
+            />
+            <img
+              src="images/insta.svg"
+              class="footer__socialmedia"
+              alt="Instagram"
+            />
+            <img
+              src="images/twiter.svg"
+              class="footer__socialmedia"
+              alt="Twitter"
+            />
+          </div>
         </div>
       </section>
     </footer>
