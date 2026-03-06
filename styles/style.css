@@ -56,25 +56,26 @@ body::before,
 body::after {
   content: "";
   position: absolute;
-  width: 20.83vw;
-  height: 20.83vw;
+  width: min(20.83vw, 300px); /* Limita el tamaño máximo */
+  height: min(20.83vw, 300px);
   border-radius: 50%;
   filter: blur(100px);
+  z-index: -1;
 }
 
 body::before {
   background: var(--bg-gradient);
-  top: calc(50vh - 15vw);
-  right: calc(50vw - 43vw);
+  top: 20vh; /* Más predecible */
+  right: 60vw;
+  left: 70vw;
 }
 
 body::after {
   background: var(--bg-gradient-center);
-  top: calc(300vh + 5vw);
-  left: calc(50vw - 10vw);
+  bottom: 5vh; /* Usa bottom en lugar de top extremo */
+  left: 40vw;
 }
 
-/* Header */
 .header {
   padding-block: 80px;
   min-height: 100vh;
@@ -121,17 +122,37 @@ body::after {
   font-family: var(--font-primary);
   color: var(--color-white);
 }
+/* Primera columna */ /* Primera columna */ /* Primera columna */
 
 .header__image {
   width: 20.83vw;
   max-width: 216px;
-  height: auto; /* Cambia esto */
-  min-height: 300px; /* Añade altura mínima */
+  height: auto;
+  min-height: 300px;
   aspect-ratio: 220 / 300;
   grid-column: 2;
-  grid-row: 1 / -1; /* Ocupa todas las filas */
-  background: url("images/fotodeperfil.jpg") center/cover no-repeat;
+  grid-row: 1 / -1;
   border-radius: 5px;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .container.container-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 20px;
+  }
+
+  .header__image {
+    width: 100%;
+    height: 280px;
+    max-width: none;
+    min-height: auto;
+    aspect-ratio: auto;
+    grid-column: 1;
+    grid-row: 4;
+    justify-self: center;
+  }
 }
 
 /* Navigation */
@@ -209,7 +230,69 @@ body::after {
   height: 57px;
 }
 
-/* cambios de features depues */
+.features {
+  padding-block: 6rem;
+}
+
+.features__title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.features__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .header__image {
+    width: 180px;
+    max-width: 180px;
+  }
+
+  .skills__container {
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+
+  .features__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__menu {
+    gap: 1.5rem;
+  }
+
+  .skills__icon {
+    width: 40px;
+    height: 45px;
+  }
+
+  .main__subtitle {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+}
+/*----------------*/
+.skills__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+
+.skills__icon {
+  width: 50px;
+  height: 57px;
+}
 
 .features {
   padding-block: 6rem;
@@ -222,18 +305,32 @@ body::after {
 
 .features__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
   gap: 2rem;
+  max-width: 1200px; /* Controla el ancho máximo */
+  margin: 0 auto;
 }
 
 .features__card {
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
+  background: transparent; /* Quitamos el fondo, lo pondremos en el contenido */
+  border-radius: 0; /* Sin border-radius según Figma */
   overflow: hidden;
-  position: relative;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+}
+
+.features__card-content {
+  background: #1c1c1c;
+  padding: 2rem;
+  height: 340px;
+  position: relative; /* Importante para el posicionamiento absoluto */
+}
+
+.features__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .features__card:hover {
@@ -245,18 +342,40 @@ body::after {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(28, 28, 28, 0) 0%,
-    rgba(28, 28, 28, 0.7) 100%
+    180deg,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.5) 100%
   );
-  border-radius: 16px;
   pointer-events: none;
+}
+
+.features__card-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-white);
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.features__card-links {
+  position: absolute;
+  bottom: 2rem; /* Ajusta según necesites */
+  left: 2rem;
+  display: flex;
+  gap: 1rem; /* Espacio entre los enlaces */
+}
+
+.features__card-image-container {
+  position: relative;
+  height: 330px;
 }
 
 .features__card-tech-icons {
   position: absolute;
   bottom: 1rem;
-  right: 1rem;
+  left: 1rem;
   display: flex;
   gap: 0.5rem;
   z-index: 2;
@@ -268,6 +387,110 @@ body::after {
   transition: transform 0.2s ease;
 }
 
-.features__card-tech-icon:hover {
-  transform: scale(1.1);
+.features__card-link:hover {
+  opacity: 0.7;
+}
+
+.features__card-title {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+.features__card-link:first-child {
+  width: 132px; /* Ancho de Figma */
+}
+.features__card-link:last-child {
+  width: 83px; /* Ancho de Figma */
+}
+
+.icon {
+  width: 132px;
+  height: 22px;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(150px);
+  z-index: 1;
+}
+
+.footer {
+  position: relative;
+  padding: 4rem 0;
+  overflow: hidden;
+  background-color: var(--bg-gradient);
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.footer__contact-title {
+  margin-bottom: 2rem;
+  font-family: var(--font-primary);
+  font-size: 2rem;
+}
+
+.footer__contact-description {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: center;
+  color: #6d6dff;
+  margin-bottom: 2rem;
+}
+
+.footer__icons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__socialmedia {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer {
+    padding: 3rem 0;
+  }
+
+  .footer__contact-title {
+    font-size: 1.6rem;
+  }
+
+  .footer__icons {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__icons {
+    gap: 1rem;
+  }
+
+  .footer__socialmedia {
+    width: 20px;
+    height: 20px;
+  }
 }
